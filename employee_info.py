@@ -30,9 +30,10 @@ def calculate_average_salary():
 
 def get_employees_by_dept(department):
     result = []
-
     # Add your implementation from here
-
+    for item in employee_data:
+        if item["department"] == department:
+            result.append(item)
 
     return result
 
@@ -68,7 +69,7 @@ def display_main_menu():
 
     elif option == '2':
         average_salary = calculate_average_salary()
-        print("Average salary = " + str(average_salary))
+        print("Average salary = " + "{:.2f}".format(average_salary))
 
     elif option == '3':
         age_lower_limit = input("age (Lower Limit) = ")
